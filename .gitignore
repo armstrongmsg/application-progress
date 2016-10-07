@@ -5,3 +5,5 @@
 *.txt
 *.csv
 *.Rproj
+*.pyc
+*.png
