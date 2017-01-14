@@ -25,7 +25,7 @@ for i in range(0,50):
     time.sleep(5)
 
 start_time = time.time()
-print "timestamp,progress"
+#print "timestamp,progress"
 
 if app is not None:
     app_id = app[0]
@@ -37,7 +37,8 @@ if app is not None:
                 output = time.strftime("%c") + ";" + app_id + ";" + app[1]+ ";"
                 output += str(result['numCompletedTasks']/float(result['numTasks']))
                 progress = str(result['numCompletedTasks']/float(result['numTasks']))
-                print "%s,%s" % (time.time() - start_time,progress)
+                stage = str(result['numCompletedStages'])
+                print "%s,%s,%s" % (time.time() - start_time, progress, stage)
                 time.sleep(1)
         except:
             #print "end"
